@@ -53,6 +53,7 @@ public class test implements ActionListener {
         fr.add(p2);
         fr.pack();
         fr.setVisible(true);
+        //อัพแล้ว
 
     }
 

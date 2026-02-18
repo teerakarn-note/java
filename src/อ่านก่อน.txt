@@ -1,0 +1,66 @@
+import java.util.Scanner;
+รับค่า
+scanner.nextLine() ข้อความ
+scanner.netxInt() รับตัวเลข
+
+Inheritance คือ
+
+
+1. FlowLayout
+
+📌 จัดวางคอมโพเนนต์จาก ซ้ายไปขวา
+ถ้าพื้นที่ไม่พอจะขึ้นบรรทัดใหม่
+
+2. BorderLayout
+
+📌 แบ่งหน้าต่างเป็น 5 ส่วน
+
+NORTH (บน)
+
+SOUTH (ล่าง)
+
+EAST (ขวา)
+
+WEST (ซ้าย)
+
+CENTER (กลาง)
+
+setLayout(new BorderLayout());
+add(new JButton("Top"), BorderLayout.NORTH);
+
+3. GridLayout
+
+📌 แบ่งเป็น ตารางแถว × คอลัมน์
+ทุกช่องขนาดเท่ากัน
+
+setLayout(new GridLayout(3, 3));
+
+4. BoxLayout
+
+📌 จัดเรียงแนวตั้ง หรือ แนวนอน
+
+setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
+
+
+5. Null Layout (กำหนดตำแหน่งเอง)
+
+📌 ไม่ใช้ Layout Manager
+กำหนดตำแหน่งด้วย setBounds()
+
+setLayout(null);
+button.setBounds(50, 50, 100, 30);
+
+
+๋๋Jframe  frame = new Jframe();
+frame = setTitle("ma);
+frame.setSize(600,400);
+frame.setResizable(false);//ไม่ให้ขยาย
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); ปิดapp
+frame.setVisible(ture);//ให่แสดงหน้่าจอโปรแกรมขึ้นมา
+frame.setLocationRelativeTo(null);//ย้ายโปรแกรมมาตรงกลาง
+
+
+
+
+การเพิ่มปุ่มซ้ำ: หากคุณเอา bt1/bt2 ใส่ทั้ง p1 และ p2 ปุ่มจะถูกย้ายไปยังคอนเทนเนอร์ล่าสุด — Swing จะเอา component ออกจาก parent เก่าเมื่อเพิ่มไปที่ parent ใหม่ ทำให้ p1 ดูว่าง
+เรียก setVisible(true) ก่อนเพิ่มคอมโพเนนต์: ถ้าแสดงกรอบก่อนแล้วค่อยเพิ่ม component จะไม่รีเลย์เอาต์อัตโนมัติ (ต้องเรียก revalidate()/repaint() หรือ validate()/repaint()) — แก้ง่ายสุดคือย้าย fr.setVisible(true); ให้อยู่หลังการ add(...)
